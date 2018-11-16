@@ -3,7 +3,7 @@ Prediction of DNA strand pairing as used in [Zrimec et al. 2013: Band smearing o
 The structures resulting from strand pairing of two nucleotide sequences were characterized with the procedure termed BorS. DNA strand pairing was based on rules of the NN model (Santalucia 2004) and a dynamic programming algorithm adapted from Smith and Waterman's local alignment algorithm (Smith & Waterman 1981). To accommodate analysis of large datasets, an implementation of DNA strand pairing was used, which was based on the NN model unified Watson-Crick (Santalucia 1998) and mismatch parameters (Santalucia 2004). The NN model in the BorS procedure was improved by addition of a gap opening parameter (gap).
 In BorS, the individual optimal mating of two nucleotide sequences a and b was determined with the following algorithm that searched for the optimal path of pairing in a matrix, in which the interaction between the two sequences was evaluated:
 i . A matrix H was built as follows:
-![image](https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure1.png)
+![image](https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure1.png | width=100)
 where:
 m 	.. size of sequence a,
 n 	.. size of sequence b,
