@@ -1,6 +1,6 @@
 Prediction of DNA strand pairing as used in [Zrimec et al. 2013: Band smearing of PCR amplified bacterial 16S rRNA genes: Dependence on initial PCR target diversity.](https://www.sciencedirect.com/science/article/pii/S0167701213002467?via%3Dihub)
 
-The structures resulting from strand pairing of two nucleotide sequences were characterized with the procedure termed BorS. DNA strand pairing was based on rules of the NN model (Santalucia 2004) and a dynamic programming algorithm adapted from Smith and Waterman's algorithm (Smith & Waterman 1981). To accommodate analysis of large datasets, an implementation of DNA strand pairing was used, which was based on the NN model unified Watson-Crick (Santalucia 1998) and mismatch parameters (Santalucia 2004). The NN model in the BorS procedure was improved by addition of a gap opening parameter (gap).
+The structures resulting from strand pairing of two nucleotide sequences were characterized with the procedure termed BorS. DNA strand pairing was based on rules of the NN model (Santalucia 2004) and a dynamic programming algorithm adapted from Smith and Waterman's local alignment algorithm (Smith & Waterman 1981). To accommodate analysis of large datasets, an implementation of DNA strand pairing was used, which was based on the NN model unified Watson-Crick (Santalucia 1998) and mismatch parameters (Santalucia 2004). The NN model in the BorS procedure was improved by addition of a gap opening parameter (gap).
 In BorS, the individual optimal mating of two nucleotide sequences a and b was determined with the following algorithm that searched for the optimal path of pairing in a matrix, in which the interaction between the two sequences was evaluated:
 i . A matrix H was built as follows:
 ![alt text](https://raw.githubusercontent.com/JanZrimec/Band_smear_algorithm_BorS/Figure1.png)
@@ -17,6 +17,6 @@ ii. A traceback procedure was performed, where the greatest value in the last co
 
 The BorS procedure tested all interactions between pairs of sequences that were determined as the most stable structural variants of the DNA with a lower dissociation energy. The following structural characteristics were determined: (i) the dissociation energy of DNA (dG), (ii) the entalpy (dH) and entropy (dS), (iii) the proportion of the number of base pairs with respect to length sequence (bp) (iv) of the average number of nucleotides in loops, which surround the base pairs, depending on the size of the area of overlap of the two sequences (loop), and (v) the average number of free nucleotides in both chains hanging outside the structure (dang).
 
-The functions were tested in Matlab and Octave.
+An additional Needleman Wunsch (NW) global alingment implementation was added. The functions were tested in Matlab and Octave.
 
 Use:
