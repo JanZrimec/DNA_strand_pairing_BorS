@@ -11,16 +11,16 @@ In BorS, the individual optimal mating of two nucleotide sequences a and b was d
 
 <img src="https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure1.png" width="480">
 
-   where:
+⋅⋅⋅where: 
 
-  * m 	.. size of sequence a,
-  * n 	.. size of sequence b,
-  * b 	.. element of H, which represents the interaction between two nucleotides from the 	sequences a and b (ai-1ai/bj-1bj), 
-  * NN 	.. free energy parameter ΔG°37, which evaluate the interaction (ai-1ai/bj-1bj), 
-  * NNinit 	.. initialization parameter in the NN model (Santalucia 2004),
-  * gap 	.. gap opening parameter.
+⋅⋅⋅* m 	.. size of sequence a,  
+⋅⋅⋅* n 	.. size of sequence b,  
+⋅⋅⋅* b 	.. element of H, which represents the interaction between two nucleotides from the 	sequences a and b (ai-1ai/bj-1bj),  
+⋅⋅⋅* NN 	.. free energy parameter ΔG°37, which evaluate the interaction (ai-1ai/bj-1bj),  
+⋅⋅⋅* NNinit 	.. initialization parameter in the NN model (Santalucia 2004),  
+⋅⋅⋅* gap 	.. gap opening parameter.  
 
-   During building of the matrix H, pointers to previous elements, from which the consequent elements were calculated, were continuously stored.
+⋅⋅⋅During building of the matrix H, pointers to previous elements, from which the consequent elements were calculated, were continuously stored. 
 
 2. A traceback procedure was performed, where the greatest value in the last column or the last row in matrix H was found and the optimal path that led up to the maximum value was determined according to the array of pointers, stored while building H. The procedure was set to prefer a diagonal path without gap opening, since this corresponded to the NN strand pairing rules. The optimal path represented the optimal pairing of sequences a and b depending on the dissociation energy of the structures.
 
@@ -30,7 +30,7 @@ An additional Needleman Wunsch (NW) global alingment implementation was added. T
 
 ## Usage
 
-Input is a character array of sequences for pairing and gap parameter (value around 1).
+Input is a character array of sequences for pairing *seq and gap parameter *gap (value around 1).
 
 ```[output,data] = function_multi_pairing(seq,gap)```
 
