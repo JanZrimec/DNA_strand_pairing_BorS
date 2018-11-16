@@ -2,6 +2,7 @@
 as used in [Zrimec et al. 2013: Band smearing of PCR amplified bacterial 16S rRNA genes: Dependence on initial PCR target diversity.](https://www.sciencedirect.com/science/article/pii/S0167701213002467?via%3Dihub)
 
 ### Description
+
 The structures resulting from strand pairing of two nucleotide sequences were characterized with the procedure termed BorS. DNA strand pairing was based on rules of the NN model (Santalucia 2004) and a dynamic programming algorithm adapted from Smith and Waterman's local alignment algorithm (Smith & Waterman 1981). To accommodate analysis of large datasets, an implementation of DNA strand pairing was used, which was based on the NN model unified Watson-Crick (Santalucia 1998) and mismatch parameters (Santalucia 2004). The NN model in the BorS procedure was improved by addition of a gap opening parameter (gap).
 In BorS, the individual optimal mating of two nucleotide sequences a and b was determined with the following algorithm that searched for the optimal path of pairing in a matrix, in which the interaction between the two sequences was evaluated:
 1. A matrix H was built as follows:
@@ -9,12 +10,12 @@ In BorS, the individual optimal mating of two nucleotide sequences a and b was d
 <img src="https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure1.png" width="480">
 
 where:
-..*m 	.. size of sequence a,
-..*n 	.. size of sequence b,
-..*b 	.. element of H, which represents the interaction between two nucleotides from the 	sequences a and b (ai-1ai/bj-1bj), 
-..*NN 	.. free energy parameter ΔG°37, which evaluate the interaction (ai-1ai/bj-1bj), 
-..*NNinit 	.. initialization parameter in the NN model (Santalucia 2004),
-..*gap 	.. gap opening parameter.
+..* m 	.. size of sequence a,
+..* n 	.. size of sequence b,
+..* b 	.. element of H, which represents the interaction between two nucleotides from the 	sequences a and b (ai-1ai/bj-1bj), 
+..* NN 	.. free energy parameter ΔG°37, which evaluate the interaction (ai-1ai/bj-1bj), 
+..* NNinit 	.. initialization parameter in the NN model (Santalucia 2004),
+..* gap 	.. gap opening parameter.
 
 During building of the matrix H, pointers to previous elements, from which the consequent elements were calculated, were continuously stored.
 
@@ -25,7 +26,11 @@ The BorS procedure tested all interactions between pairs of sequences that were 
 An additional Needleman Wunsch (NW) global alingment implementation was added. The functions were tested in Matlab and Octave.
 
 ## Usage
+
 Input is a character array of sequences for pairing and gap parameter (value around 1).
-'[output,data] = function_multi_pairing(seq,gap)'
+
+```[output,data] = function_multi_pairing(seq,gap)```
+
 or 
-'[output,data] = function_multi_pairing_NW(seq,gap)'
+
+```[output,data] = function_multi_pairing_NW(seq,gap)```
