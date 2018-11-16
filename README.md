@@ -10,7 +10,6 @@ In BorS, the individual optimal mating of two nucleotide sequences a and b was d
 1. A matrix H was built as follows:
 
 <img src="https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure1.png" width="480">
-
   where:
 
   * m 	.. size of sequence a,
