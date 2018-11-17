@@ -41,10 +41,6 @@ Input is a character array of sequences for pairing *seq* and gap parameter *gap
 
 ```[output,data] = function_multi_pairing(seq,gap)```
 
-or using Needleman Wunsch based algorithm:
-
-```[output,data] = function_multi_pairing_nw(seq,gap)```
-
 Melting temperature can be calculated according to Santalucia 1998:
 
 ```Tm = 1000*H/(S+1.9872*log(0.0004/4))-273.15```
