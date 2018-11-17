@@ -23,6 +23,8 @@ In BorS, the individual optimal mating of two nucleotide sequences a and b was d
 
 2. A traceback procedure was performed, where the greatest value in the last column or the last row in matrix *H* was found and the optimal path that led up to the maximum value was determined according to the array of pointers, stored while building *H*. The procedure was set to prefer a diagonal path without gap opening, since this corresponded to the NN strand pairing rules. The optimal path represented the optimal pairing of sequences a and b depending on the dissociation energy of the structures.
 
+<img src="https://github.com/JanZrimec/DNA_strand_pairing_BorS/blob/master/Figure2.png" width="160">
+
 The BorS procedure tests all interactions between pairs of sequences that are determined as the most stable structural variants of the DNA with a lower dissociation energy. The following structural characteristics are output:
 * dissociation energy of DNA (*dG*),
 * entalpy (*dH*) and entropy (*dS*),
@@ -39,6 +41,10 @@ Input is a character array of sequences for pairing *seq* and gap parameter *gap
 
 ```[output,data] = function_multi_pairing(seq,gap)```
 
-or 
+or using Needleman Wunsch based algorithm:
 
 ```[output,data] = function_multi_pairing_nw(seq,gap)```
+
+Melting temperature can be calculated according to Santalucia 1998:
+
+```Tm = 1000*H/(S+1.9872*log(0.0004/4))-273.15```
