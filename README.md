@@ -41,6 +41,6 @@ Input is a character array of sequences for pairing *seq* and gap parameter *gap
 
 ```[output,data] = function_multi_pairing(seq,gap)```
 
-Melting temperature can be calculated according to Santalucia 1998:
+Melting temperature can be calculated according to [Santalucia 1998](https://www.pnas.org/content/95/4/1460).
 
 ```Tm = 1000*H/(S+1.9872*log(0.0004/4))-273.15```
